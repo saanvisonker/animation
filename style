@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{color: aliceblue;
+   background-image: url(/img/background.webp);
+}
+.container{
+    border: 2px solid palegreen;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 25px;
+}.ques { border: 2px solid yellow;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 30px;}
+    .main{
+        display: flex;
+    }
+.lamp{
+    border: 2px solid paleturquoise;
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    margin-top: 60px;
+}
+.lamp img{ 
+ margin-left: 60px;
+}
+
+#btn1{
+    height: 40px;
+    width: 200px;
+  
+}
+#btn2{
+    height: 40px;
+    width: 200px;
+}
+.btn{
+ margin: auto;
+    border: 2px solid red;
+}
+.shape{ 
+    
+}

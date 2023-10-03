@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="/_animation//html/style.css">
+    <style>
+        canvas {
+            background-color: #002127;
+        }
+       body{
+        background-color: #002127;
+        color: antiquewhite;
+       }
+        .container{
+         color: rgb(255, 255, 255);
+         font-size: 60px;
+         display: block;
+         /* border: 2px solid wheat; */
+         text-align: center;
+         animation: move 3s 5s ease-in 1
+        }
+
+        @keyframes move{ 0%{transform: translateY(-60vh);
+        }
+        
+        }
+        #btn{
+            height: 40px;
+            width: 120px;
+            border-radius: 10px;
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<div class="container">
+    <h1> Spotlight Quiz</h1>
+    <button id="btn"> <a href="/_animation/html/game.html">START</a></button>
+</div>
+<body>
+   
+    <canvas id="bubbleCanvas">
+     
+    </canvas>
+  
+    <script>
+   
+
+        const canvas = document.getElementById("bubbleCanvas");
+        const ctx = canvas.getContext("2d");
+
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+      
+        const bubbles = [];
+
+        
+        function createBubble() {
+            const bubble = {
+                x: Math.random() * canvas.width,
+                y: canvas.height + 30,
+                radius: Math.random() * 20 + 10, 
+                speed: Math.random() * 4 + 2,     
+                color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`
+            };
+
+            bubbles.push(bubble);
+        }
+
+     
+        function animateBubbles() {
+            requestAnimationFrame(animateBubbles);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (Math.random() < 0.1) {
+                createBubble();
+            }
+
+            bubbles.forEach((bubble, index) => {
+                bubble.y -= bubble.speed;
+
+                if (bubble.y + bubble.radius < 0) {
+                
+                    bubbles.splice(index, 1);
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = bubble.color;
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            });
+        }
+
+        animateBubbles();
+    </script>
+</body>
+</html>

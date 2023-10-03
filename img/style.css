@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: aliceblue;
+}
+canvas {
+    background-color: #00202b;
+}
