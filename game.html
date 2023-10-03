@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game</title>
-    <link rel="stylesheet" href="/_animation/html/style.css">
+    <link rel="stylesheet" href="style.css">
    <style>
     body{
 background-image: url(/img/background.webp);
@@ -18,21 +18,13 @@ background-image: url(/img/background.webp);
     font-size: 25px;
 }.ques { 
     text-align: center;
-    margin-top: 40px;
-    font-size: 30px;}
+    margin: 40px,0px;   
+     font-size: 30px;}
+
     .main{
         display: flex;
     }
-.lamp{
-   
-    height: 400px;
-    width: 400px;
-    margin: auto;
-    margin-top: 60px;
-}
-.lamp img{ 
- margin-left: 60px;
-}
+
 
 #btn1{
     height: 40px;
@@ -45,19 +37,26 @@ background-image: url(/img/background.webp);
 }
 .btn{
  margin: auto;
-    border: 2px solid red;
 }
-.shape{
-    border: 2px solid paleturquoise;
-
-}
-
-
 #btn3{
     height: 80px;
 width: 120px;
 float: right
 }
+
+.answer{
+    visibility: hidden;
+}
+.next{
+    margin-top: 180px;
+    border-radius: 10px;
+
+}
+.next a{
+ padding: 100px 40px;
+ color: black;
+}
+
    </style>
 </head>
 <body>
@@ -69,12 +68,22 @@ float: right
 </div>
 <div class="main">
 <div class="btn"><button id="btn1">Cascading Style Sheet</button></div>
-<div class="lamp">
-   <img src="/img/lamp.png" alt="lamp" height="300px">
+<div >
+   <img  class="answer" id="right" src="/img/celebration.gif" alt="right" height="300px">
+
 </div>
-  
+ 
 <div class="btn"><button id="btn2">canvas style sheet</button></div>
 </div>
-<div class="next" id="btn3" > <button><a href="/_animation/html/last.html"> NEXT</a></button></div>
+<div class="next" id="btn3" > <button><a href="/last.html"> NEXT</a></button></div>
+<script >
+    const click =document.getElementById('btn1')
+    const  celeb =document.getElementById('right')
+
+    click.addEventListener('click' ,function(){
+        celeb.classList.remove('answer')
+    })
+
+</script>
 </body>
 </html>

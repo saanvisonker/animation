@@ -33,11 +33,16 @@
             color: black;
             text-decoration: none;
         }
+        #btn a{
+            color: #002127;
+            text-decoration: none;
+            font-weight: bolder;
+        }
     </style>
 </head>
 <div class="container">
     <h1> Spotlight Quiz</h1>
-    <button id="btn"> <a href="/_animation/html/game.html">START</a></button>
+    <button id="btn"> <a href="/game.html">START</a></button>
 </div>
 <body>
    
@@ -65,7 +70,7 @@
                 y: canvas.height + 30,
                 radius: Math.random() * 20 + 10, 
                 speed: Math.random() * 4 + 2,     
-                color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`
+                color: `rgba(${Math.random() * 200}, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`
             };
 
             bubbles.push(bubble);
